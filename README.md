@@ -54,7 +54,7 @@ Make sure you have [node.js](https://nodejs.org/) installed.
 
 ### How to get this template
 
-To clone this template without downloading the entire repository, run the following command:
+To clone this template, run the following command:
 
 ```
 git clone https://github.com/higayasuo/mbc2023-day6
