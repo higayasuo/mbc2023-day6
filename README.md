@@ -57,7 +57,7 @@ Make sure you have [node.js](https://nodejs.org/) installed.
 To clone this template without downloading the entire repository, run the following command:
 
 ```
-npx degit dfinity/examples/svelte/svelte-motoko-starter svelte-motoko-starter
+git clone https://github.com/higayasuo/mbc2023-day6
 ```
 
 ### DFX
@@ -65,7 +65,7 @@ npx degit dfinity/examples/svelte/svelte-motoko-starter svelte-motoko-starter
 Install `dfx` by running
 
 ```
-sh -ci "$(curl -fsSL https://smartcontracts.org/install.sh)"
+DFX_VERSION=0.12.0 sh -ci "$(curl -fsSL https://smartcontracts.org/install.sh)"
 ```
 
 ### Rust
@@ -94,28 +94,6 @@ dfx stop
 
 from the project directory will stop the local replica.
 
-## Install Internet Identity
-
-To use Internet Identity during development you need to have it running on your local replica. This repository includes it in a submodule.
-
-To clone the II repository, run:
-
-```
-git submodule update --init --recursive
-```
-
-When the repository is cloned, switch to its directory and install it:
-
-(If you're running this on an M1 Mac, make sure you follow [these steps]())
-
-```
-cd internet-identity
-npm install
-II_FETCH_ROOT_KEY=1 dfx deploy --no-wallet --argument '(null)'
-```
-
-This will take several minutes to complete.
-
 ## Build & run the dapp
 
 Make sure you switch back to the project root directory.
@@ -125,7 +103,7 @@ First, install the frontend dependencies by running
 ```
 cd src/frontend
 npm install
-cd ..
+cd ../..
 ```
 
 To build and deploy the project run
@@ -133,36 +111,6 @@ To build and deploy the project run
 ```
 dfx deploy
 ```
-
-When the process completes you'll have a backend and a frontend canister running locally. To find the frontend canister's ID, run
-
-```
-dfx canister id frontend
-```
-
-It will output something similar to `rno2w-sqaaa-aaaaa-aaacq-cai`. Copy this ID and open it in the browser using `http://localhost:8000?canisterId=<canister ID>`, eg. `http://localhost:8000?canisterId=rno2w-sqaaa-aaaaa-aaacq-cai`.
-
-## Local development
-
-During local development you will be building and deploying the Motoko backend to the local replica. Building the backend will generate so called declaration files, that are Candid and JavaScript files helping the frontend communicate to the back end.
-
-### Motoko back end
-
-If you're using Visual Studio Code it is recommended to use the [Motoko extension](https://marketplace.visualstudio.com/items?itemName=dfinity-foundation.vscode-motoko) developed by the DFINITY Foundation.
-
-To build the backend canister and regenerate the Candid interface declaration files for the frontend run
-
-```
-dfx build backend
-```
-
-To deploy the backend canister to the local replica you have several options:
-
-`dfx deploy backend` will upgrade your backend canister. In short, upgrading will keep the contents of the variables you marked as stable, in contrast to reinstalling, which will clear the state of your canister.
-
-`dfx deploy backend --mode reinstall` will reinstall the backend canister clearing all existing state.
-
-For more options and other commands see the [dfx CLI reference](https://smartcontracts.org/docs/developers-guide/cli-reference.html).
 
 ### Svelte frontend
 
