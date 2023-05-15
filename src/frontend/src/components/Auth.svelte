@@ -52,10 +52,12 @@
 <div class="container">
   {#if $auth.loggedIn}
     <div>
-      <button on:click={logout}>Log out</button>
+      <button class="authButtn" on:click={logout}>Log out</button>
     </div>
   {:else}
-    <button on:click={login}>Authenticate in with Internet Identity</button>
+    <button class="authButtn" on:click={login}
+      >Authenticate in with Internet Identity</button
+    >
   {/if}
 
   <div class="principal-info">
@@ -79,5 +81,29 @@
 
   .principal-info {
     margin-top: 32px;
+  }
+
+  .authButtn {
+    //width: 70px;
+    //height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    //padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #fff;
+    background: #fd9535; /*背景色*/
+    border-bottom: solid 2px #d27d00; /*少し濃い目の色に*/
+    border-radius: 4px; /*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+      0 2px 2px rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+  }
+  .authButtn:hover {
+    background: #f3aa66;
+  }
+  .authButtn:active {
+    font-size: larger;
   }
 </style>

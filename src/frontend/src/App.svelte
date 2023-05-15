@@ -36,6 +36,7 @@
     font-size: 3em;
     font-weight: 400;
     line-height: 1.09;
+    font-family: Georgia, "Times New Roman", Times, serif, sans-serif;
   }
 
   @media (min-width: 640px) {
