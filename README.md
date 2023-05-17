@@ -11,7 +11,7 @@ This template contains
 - a Svelte frontend app under `src/frontend` to be hosted on-chain, with support for authentication using Internet Identity
 - a Motoko dapp under `src/backend` to serve as a backend to the Svelte frontend
 
-You can see a deployed version of this template here: https://z6aq5-yaaaa-aaaal-ackhq-cai.icp0.io
+You can see a deployed version of this template here: <a href="https://z6aq5-yaaaa-aaaal-ackhq-cai.icp0.io" target="_blank">https://z6aq5-yaaaa-aaaal-ackhq-cai.icp0.io</a>
 
 ## Install dependencies
 
