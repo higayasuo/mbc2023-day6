@@ -11,42 +11,7 @@ This template contains
 - a Svelte frontend app under `src/frontend` to be hosted on-chain, with support for authentication using Internet Identity
 - a Motoko dapp under `src/backend` to serve as a backend to the Svelte frontend
 
-You can see a deployed version of this template here: https://zixfv-4yaaa-aaaam-aaatq-cai.ic0.app/
-
-### What is the Internet Computer?
-
-The Internet Computer is a novel blockchain that has the unique capability to serve web content while not requiring the end users to use a browser extension, such as Metamask.
-
-Coupled with super fast execution the Internet Computer provides the worlds first truly user friendly Web 3.0 experience.
-
-### What are canisters?
-
-Dapps on the Internet Computer live in canisters, which are special smart contracts that run WebAssembly, and can respond to regular HTTP requests, among other capabilities.
-
-This repository uses Svelte for the frontend running in the browser, and the backend dapp is written in Motoko, it serves as the business logic of your dapp.
-
-You will build and deploy the following _canisters_:
-
-- `backend` that is written in Motoko, and will hold the business logic of your dapp.
-- `frontend` that is your regular Svelte app, transferred into a `frontend asset` canister.
-- `internet_identity` that this repository uses as an authentication provider. It is written in Rust.
-
-### What is Motoko?
-
-Motoko is a new language designed for the Internet Computer. Easy to learn for JavaScript and Solidity developers. Created by the Motoko team at the DFINITY Foundation, led by WebAssembly co-creator Andreas Rossberg. To learn more about the language, check out the [SDK](https://smartcontracts.org/docs/language-guide/motoko.html).
-
-### What is Internet Identity?
-
-This starter template also includes integration with Internet Identity. Internet Identity is a new authentication framework similar to Github or Google login, but providing complete anonimity to the users. To learn more about Internet Identity check out the [documentation](https://smartcontracts.org/docs/ic-identity-guide/what-is-ic-identity.html).
-
-## Security Considerations and Security Best Practices
-
-If you base your application on this example, we recommend you familiarize yourself with and adhere to the [Security Best Practices](https://internetcomputer.org/docs/current/references/security/) for developing on the Internet Computer. This example may not implement all the best practices.
-
-For example, the following aspects are particularly relevant for creating frontends:
-* [Use a well-audited authentication service and client side IC libraries](https://internetcomputer.org/docs/current/references/security/web-app-development-security-best-practices#use-a-well-audited-authentication-service-and-client-side-ic-libraries)
-* [Define security headers including a Content Security Policy (CSP)](https://internetcomputer.org/docs/current/references/security/web-app-development-security-best-practices#define-security-headers-including-a-content-security-policy-csp)
-* [Don’t load JavaScript (and other assets) from untrusted domains](https://internetcomputer.org/docs/current/references/security/web-app-development-security-best-practices#dont-load-javascript-and-other-assets-from-untrusted-domains)
+You can see a deployed version of this template here: https://z6aq5-yaaaa-aaaal-ackhq-cai.icp0.io
 
 ## Install dependencies
 
@@ -142,8 +107,3 @@ After making sure you have cycles available you can run
 dfx deploy --network ic
 ```
 
-The command will build the project, create two new canisters on the IC and deploy both the Svelte and Motoko dapps. The command will also create a new file `canister_ids.json` which will help the dfx tool deploy to the same canisters in future updates. You can commit this file in your repository.
-
-You can now open your Svelte app running on the IC. You can find the canister ID in the deploy command output, or use the `frontend` ID in `canister_ids.json`.
-
-The link to your app is `<frontend canister id>.ic0.app`. For example if your `frontend` canister ID is `zixfv-4yaaa-aaaam-aaatq-cai`, your app will be at `https://zixfv-4yaaa-aaaam-aaatq-cai.ic0.app/`.
